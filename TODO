@@ -1,0 +1,2 @@
+sleep 120 instead of die if parent can't fork?
+have children check if getppid==1 and if so, close $server->{sock} and exit after completing the current msg
