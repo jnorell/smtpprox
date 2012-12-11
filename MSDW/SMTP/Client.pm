@@ -10,6 +10,17 @@
 #
 # Written by Bennett Todd <bet@rahul.net>
 
+#enable support for IPv6, if available
+eval "require IO::Socket::INET6";
+if ($@ && $@ =~ /^Can't locate/)
+{
+	# a dummy INET6 module that falls back on IO::Socket::INET
+	eval q|
+		package IO::Socket::INET6;
+		use base "IO::Socket::INET";
+		|;
+}
+
 package MSDW::SMTP::Client;
 use IO::Socket;
 
@@ -95,7 +106,7 @@ sub new {
     my ($this, @opts) = @_;
     my $class = ref($this) || $this;
     my $self = bless { timeout => 300, @opts }, $class;
-    $self->{sock} = IO::Socket::INET->new(
+    $self->{sock} = IO::Socket::INET6->new(
 	PeerAddr => $self->{interface},
 	PeerPort => $self->{port},
 	Timeout => $self->{timeout},
@@ -130,10 +141,17 @@ sub yammer {
     local (*_);
     local ($/) = "\r\n";
     while (<$fh>) {
-	s/^\./../;
-	$self->{sock}->print($_) or die "$0: write error: $!\n";
+		$self->write_data_line($_);
     }
     $self->{sock}->print(".\r\n") or die "$0: write error: $!\n";
+}
+
+sub write_data_line
+{
+	my ($self, $line) = @_;
+	$line =~ s/^\./../;
+	$self->{sock}->print($line)
+		or die "$0: write error: $!\n";
 }
 
 1;

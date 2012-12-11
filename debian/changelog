@@ -1,5 +1,6 @@
 smtpprox (1.2-1) UNRELEASED; urgency=low
 
   * Initial release
+  * Add INET6 support from dkimproxy's Client.pm.
 
  -- Jesse Norell <jesse@kci.net>  Mon, 26 Nov 2012 16:06:47 -0700
