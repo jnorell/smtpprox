@@ -1,0 +1,9 @@
+files
+smtpprox.debhelper.log
+smtpprox.*.debhelper
+smtpprox.substvars
+smtpprox/
+libmsdw-smtp-perl.debhelper.log
+libmsdw-smtp-perl.*.debhelper
+libmsdw-smtp-perl.substvars
+libmsdw-smtp-perl/

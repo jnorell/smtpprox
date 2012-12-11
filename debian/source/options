@@ -1,0 +1,2 @@
+# ignore README.md from github
+extend-diff-ignore = "(^|/)(README.md)$"

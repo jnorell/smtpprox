@@ -1,0 +1,37 @@
+Source: smtpprox
+Section: mail
+Maintainer: Jesse Norell <jesse@kci.net>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: http://bent.latency.net/smtpprox/
+Vcs-Browser: https://github.com/jnorell/smtpprox
+Vcs-Git: https://github.com/jnorell/smtpprox.git
+
+Package: smtpprox
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}, libmsdw-smtp-perl | dkimproxy (<= 1.2-6)
+Description: simple efficient SMTP proxy in perl
+ smtpprox is a trivial transparent SMTP proxy, an SMTP server and client
+ combination.
+ .
+ The SMTP server writes the incoming message to a temporary file, which the
+ SMTP client reads as the message to send.  SMTP commands and replies are
+ relayed without change for the most part.
+ .
+ For efficiency reasons, it pre-forks and serves from a pool of servers,
+ Apache-style.
+
+Package: libmsdw-smtp-perl
+Priority: extra
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Breaks: dkimproxy (<= 1.2-6)
+Description: SMTP Client/Server modules from smtpprox
+ Includes the Client.pm and Server.pm SMTP modules from smtpprox
+ at http://bent.latency.net/smtpprox/ with Debian enhancements.
+ .
+ These modules are designed to expose every step of the protocol dialogue
+ to the calling program, which provides for the greatest flexibility in
+ hooking in envelope and content controls and scanning.
+

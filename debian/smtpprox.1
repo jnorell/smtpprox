@@ -1,0 +1,52 @@
+.TH SMTPPROX 1 "2012-12-11" GNUj
+
+.SH NAME
+smtpprox \- trivial transparent SMTP proxy
+
+.SH SYNOPSIS
+.B smtpprox
+.RI [ options ]
+listen.addr:port
+talk.addr:port
+.br
+
+.SH DESCRIPTION
+This manual page documents briefly the \fBsmtpprox\fP command.
+.PP
+\fBsmtpprox\fP is a trivial transparent SMTP proxy, an SMTP server
+and client combination. It uses its own SMTP server and client
+modules which are designed to expose every step of the protocol
+dialogue to the calling program, which provides for the greatest
+flexibility in hooking in envelope and content controls and scanning.
+
+.SH OPTIONS
+.SH OPTIONS
+.B
+.IP --children=N
+The number of child processes to maintain in the service pool.
+Each child terminates after servicing a random number of messages between
+\fIminperchild\fR and \fImaxperchild\fR.
+.br
+[default 16]
+.B
+.IP --minperchild=N
+Minimum number of messages serviced by a child process.
+.br
+[default 100]
+.B
+.IP --maxperchild=N
+Maximum number of messages serviced by a child process.
+.br
+[default 200]
+.B
+.IP --debugtrace=filename_prefix
+If \fIdebugtrace\fR is specified, the prefix will have the PID
+appended to it for a separate logfile for each child, which will
+capture all the SMTP dialogues that child services. It looks like a
+snooper on the client side of the proxy.
+
+.SH AUTHOR
+smtpprox was written by Bennett Todd, bet@rahul.net.
+.PP
+This manual page was written by Jesse Norell <jesse@kci.net>,
+for the Debian project (and may be used by others).

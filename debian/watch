@@ -1,0 +1,2 @@
+version=3
+http://bent.latency.net/smtpprox/smtpprox-(.*)\.tar\.gz debian uupdate
