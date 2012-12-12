@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/jnorell/smtpprox.git
 Package: smtpprox
 Priority: optional
 Architecture: all
-Depends: ${misc:Depends}, ${perl:Depends}, libmsdw-smtp-perl | dkimproxy (<= 1.2-6)
+Depends: ${misc:Depends}, ${perl:Depends}, libmsdw-smtp-perl | dkimproxy (<= 1.4.1-3)
 Description: simple efficient SMTP proxy in perl
  smtpprox is a trivial transparent SMTP proxy, an SMTP server and client
  combination.
@@ -26,7 +26,7 @@ Package: libmsdw-smtp-perl
 Priority: extra
 Architecture: all
 Depends: ${misc:Depends}, ${perl:Depends}
-Breaks: dkimproxy (<= 1.2-6)
+Breaks: dkimproxy (<= 1.4.1-3)
 Description: SMTP Client/Server modules from smtpprox
  Includes the Client.pm and Server.pm SMTP modules from smtpprox
  at http://bent.latency.net/smtpprox/ with Debian enhancements.
