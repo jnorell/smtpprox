@@ -23,6 +23,7 @@ Description: simple efficient SMTP proxy in perl
  Apache-style.
 
 Package: libmsdw-smtp-perl
+Section: perl
 Priority: extra
 Architecture: all
 Depends: ${misc:Depends}, ${perl:Depends}
