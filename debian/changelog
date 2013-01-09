@@ -1,6 +1,5 @@
-smtpprox (1.2-1) UNRELEASED; urgency=low
+smtpprox (1.2-1) unstable; urgency=low
 
-  * Initial release.  Closes: #695713
-  * Add INET6 support from dkimproxy's Client.pm.
+  * Initial release (Closes: #695713).
 
  -- Jesse Norell <jesse@kci.net>  Mon, 26 Nov 2012 16:06:47 -0700
