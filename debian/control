@@ -24,7 +24,7 @@ Description: simple efficient SMTP proxy in perl
 
 Package: libmsdw-smtp-perl
 Section: perl
-Priority: extra
+Priority: optional
 Architecture: all
 Depends: ${misc:Depends}, ${perl:Depends}
 Breaks: dkimproxy (<= 1.4.1-3)
