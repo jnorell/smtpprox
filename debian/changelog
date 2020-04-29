@@ -1,6 +1,7 @@
 smtpprox (1.2-2) UNRELEASED; urgency=medium
 
   * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
 
  -- Debian Janitor <janitor@jelmer.uk>  Wed, 29 Apr 2020 01:14:02 +0000
 
