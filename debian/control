@@ -35,4 +35,3 @@ Description: SMTP Client/Server modules from smtpprox
  These modules are designed to expose every step of the protocol dialogue
  to the calling program, which provides for the greatest flexibility in
  hooking in envelope and content controls and scanning.
-
